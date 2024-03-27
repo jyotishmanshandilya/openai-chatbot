@@ -8,7 +8,7 @@ export function ChatUI() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
 
   return (
-    <div className="w-full max-w-3xl mx-auto md:mt-10 border border-gray-200 rounded-lg divide-y divide-gray-200 dark:border-gray-800 dark:divide-gray-800 dark:border-gray-800">
+    <div className="w-full max-w-3xl mx-auto md:mt-10 border border-gray-200 rounded-lg divide-y divide-gray-200">
       <div className="grid w-full p-4 gap-2">
         <h1 className="text-3xl font-bold">AI Chatbot</h1>
       </div>
@@ -25,7 +25,7 @@ export function ChatUI() {
                 message.role === "user" ? "end" : "start"
               }`}
             >
-              <div className="rounded-lg p-4 bg-gray-100 dark:bg-gray-800">
+              <div className="rounded-lg p-4 bg-gray-100 ">
                 {message.content}
               </div>
               <div className="text-xs text-gray-500">
@@ -41,6 +41,7 @@ export function ChatUI() {
             value={input}
             onChange={handleInputChange}
             placeholder="Type a message"
+            className="text-gray-100"
           />
           <Button onClick={handleSubmit}>Send</Button>
         </div>
